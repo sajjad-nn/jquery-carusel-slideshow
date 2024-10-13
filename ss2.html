@@ -1,0 +1,66 @@
+<html>
+	<head>
+
+
+
+	<style>
+	  img{
+	     width:680px;
+		 height:380px;
+		 display:none;
+		
+		 
+	     }
+
+	 .active2{
+	  display:block !important;
+	 }
+	 #btn{
+	    width:50px;
+		height:40px;
+		background:blue;
+	 }
+	  
+	  
+	  
+	</style>
+	<script src="jquery.js"></script>
+
+	<script>
+		$.noConflict()
+		jQuery(document).ready(function($){
+	
+		 
+		    $("#btn").click(function(){
+		     $("#slide").find(".active2").next("img").addClass("active2");
+		     $("#slide").find(".active2").prev("img").removeClass("active2");
+		   
+		   
+		   })
+		   
+		     $("#btn2").click(function(){
+		     $("#slide").find(".active2").prev("img").addClass("active2");
+		     $("#slide").find(".active2").next("img").removeClass("active2");
+		   
+		   
+		   })
+		   
+		   
+		})
+		
+		
+		
+	</script>
+	</head>
+	
+	<body>
+	  <div id="slide">
+	     <input type="button" id="btn2" value="prev">
+	     <img src="1.png" class="active2">
+	     <img src="2.png">
+	     <img src="3.png">
+	     <img src="4.png">
+         <input type="button" id="btn" value="next">
+	  </div>
+	</body>
+</html>

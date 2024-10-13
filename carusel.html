@@ -1,0 +1,118 @@
+<html>
+	<head>
+
+
+
+	<style>
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		body{
+			direction: rtl;
+		}
+
+	
+	
+	 #container{
+	 width:1024px;
+	 height:420px;
+	 margin:40px auto;
+	 background:red;
+	 }
+	 #slide{
+	
+	 width:1024px;
+	 height:420px;
+	 border-radius:10px;
+	 background:#f4f4f4;
+	 }
+
+	 img{
+	 position:absolute;
+	 margin:5px auto;
+	 border-radius:50px;
+	 width :1020px;
+	 height:400px;
+	
+	   
+	
+		 
+		 }
+	
+	
+	
+	
+	
+	#np{
+	 width:100%;
+     height:30px;
+     position:relative;
+     margin-top:-120px;
+     }
+	
+	  #btn{
+       float:right;
+       margin-right:7px;
+        }
+    #btn2{
+     float:left;
+     margin-left:7px;
+     }
+
+	
+	
+	  
+	  
+	  
+	</style>
+	<script src="jquery.js"></script>
+	
+
+	<script>
+		$.noConflict()
+		jQuery(document).ready(function($){
+			$('#2').hide();
+			$('#3').hide();
+			$('#4').hide();
+		
+		    $("#btn").click(function(){
+		     $('#slide :first-child').hide().next('img').show().end().appendTo('#slide');
+		   
+		   
+		   
+		   });
+		   
+		     $("#btn2").click(function(){
+			 $('#slide :last-child').hide().prev('img').show().end().prependTo('#slide');
+		     
+		   
+		   
+		   });
+		});
+		 setInterval(function(){
+		   $('#slide :first-child').hide().next('img').show().end().appendTo('#slide');
+		 },2000);
+		
+		
+		
+	</script>
+	</head>
+	
+	<body>
+	<div id="container">
+	  <div id="slide">
+	     <img id="1" src="1.png" >
+	     <img id="2"  src="2.png">
+	     <img id="3"  src="3.png">
+	     <img id="4"  src="4.png">
+		 </div>
+		 <div id="np">
+		 <input type="button" id="btn2" value="prev">
+		 <input type="button" id="btn" value="next">
+		  </div>
+		  <hr>
+		  
+	  </div>
+	</body>
+</html>

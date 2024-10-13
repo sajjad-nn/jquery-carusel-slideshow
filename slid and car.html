@@ -1,0 +1,123 @@
+<html>
+	<head>
+
+
+
+	<style>
+	
+	img{
+	    width:680px;
+	    height:380px;
+		display:none;
+		animation: animation1 5s 1s;
+
+		 
+	     }
+	@keyframes animation1{
+		  from{opacity: 1}
+		  to{opacity: 0}
+		 }
+	.active{
+	  display:block !important;
+	 }
+	#np{
+	 width:680px;
+	 height:40px;
+	
+	 
+	 }
+	#btn{
+	position: relative;
+	  float:right;
+      margin-top:-200px;
+      z-index: 999;
+      display: block;
+      background: #2a2a2a;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.8;
+      cursor: pointer;
+	 }
+	#btn2{
+	position: relative;
+	  float:left;
+      margin-top:-200px;
+      z-index: 999;
+      display: block;
+      background: #2a2a2a;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.8;
+      cursor: pointer;
+	 }
+	  
+	  
+	  
+	</style>
+	<script src="jquery.js"></script>
+	
+
+	<script>
+		$.noConflict()
+		jQuery(document).ready(function($){
+		 setInterval(function(){
+		 
+		 if($("#slide").find(".active").next("img").length>0){
+	         $("#slide").find(".active").next("img").addClass("active")
+			 $("#slide").find(".active").first().removeClass("active")
+			 }else{
+			 $("#slide").find("img").first().addClass("active")
+			 $("#slide").find("img").last().removeClass("active")
+			
+			 }
+		   },3000 )
+		   
+		    $("#btn").click(function(){
+			if($("#slide").find(".active").next("img").length>0){
+			  $("#slide").find(".active").next("img").addClass("active");
+		     $("#slide").find(".active").prev("img").removeClass("active");
+		   }else{
+		    $("#slide").find("img").first().addClass("active")
+			 $("#slide").find("img").last().removeClass("active")
+		   }
+		   
+		   
+		   })
+		   
+		     $("#btn2").click(function(){
+			 if($("#slide").find(".active").prev("img").length>0){
+			   $("#slide").find(".active").prev("img").addClass("active");
+		     $("#slide").find(".active").next("img").removeClass("active");
+			 }else{
+			  $("#slide").find("img").last().addClass("active")
+			 $("#slide").find("img").first().removeClass("active")
+			 }
+		   
+		   
+		   
+		   })
+		})
+		
+		
+		
+	</script>
+	</head>
+	
+	<body>
+	  <div id="slide">
+	     <img src="1.png" class="active">
+	     <img src="2.png">
+	     <img src="3.png">
+	     <img src="4.png">
+		 <div id="np">
+		 <input type="button" id="btn2" value="prev">
+		 <input type="button" id="btn" value="next">
+		  </div>
+	  </div>
+	  <hr>
+	  <my-count val="xxx"></my-count>
+	  <script src="./js/count1.js"></script>
+	  <script src="./js/count2.js"></script>
+	  
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+	<head>
+
+
+
+	<style>
+	  img{
+	     width:680px;
+		 height:380px;
+		 display:none;
+		 animation: animation1 5s 1s;
+		 
+	     }
+		 @keyframes animation1{
+		  from{opacity: 1}
+		  to{opacity: 0}
+		 }
+	 .active{
+	  display:block !important;
+	 }
+	  
+	  
+	  
+	</style>
+	<script src="jquery.js"></script>
+
+	<script>
+		$.noConflict()
+		jQuery(document).ready(function($){
+		 setInterval(function(){
+		 
+		 if($("#slide").find(".active").next("img").length>0){
+	         $("#slide").find(".active").next("img").addClass("active")
+			 $("#slide").find(".active").first().removeClass("active")
+			 }else{
+			 $("#slide").find("img").first().addClass("active")
+			 $("#slide").find("img").last().removeClass("active")
+			
+			 }
+		   },3000 )
+		})
+		
+		
+		
+	</script>
+	</head>
+	
+	<body>
+	  <div id="slide">
+	     <img src="1.png" class="active">
+	     <img src="2.png">
+	     <img src="3.png">
+	     <img src="4.png">
+	  </div>
+	</body>
+</html>
